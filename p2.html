@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>معرض الصور </title>
+    <style>
+        body {
+            background-color: #e0f7fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            direction: rtl;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #0288d1;
+            color: white;
+            padding: 20px;
+            margin: 0;
+            font-size: 30px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 30px;
+        }
+
+        .fish-card {
+            background: white;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+            .fish-card:hover {
+                transform: scale(1.03);
+            }
+
+            .fish-card img {
+                width: 100%;
+                height: 200px;
+                border-radius: 10px;
+                object-fit: cover;
+            }
+
+        .info-box {
+            display: none;
+            margin-top: 15px;
+            background-color: #f1f8e9;
+            padding: 15px;
+            border-radius: 10px;
+            color: #2e7d32;
+            font-size: 30px;
+            text-align: right;
+        }
+
+        .nav-buttons {
+            margin: 20px;
+        }
+
+            .nav-buttons a {
+                text-decoration: none;
+                background-color: #0288d1;
+                color: white;
+                padding: 12px 25px;
+                border-radius: 25px;
+                margin: 0 10px;
+                font-size: 18px;
+                transition: background-color 0.3s;
+            }
+
+                .nav-buttons a:hover {
+                    background-color: #015a8c;
+                }
+    
+    </style>
+
+</head>
+<body>
+    <h1>معرض الأسماك 🐟</h1>
+
+    <div class="gallery">
+
+        <!-- سمكة المهرج -->
+        <div class="fish-card" onclick="toggleInfo('clown')">
+            <img src="gif/mohreg.jpg" alt="سمكة المهرج">
+            <div class="info-box" id="clown">
+                تعيش سمكة المهرج في الشعاب المرجانية، وتعيش في علاقة تكافلية مع شقائق النعمان. لونها برتقالي بخطوط بيضاء، واشتهرت بفيلم نيمو.
+            </div>
+        </div>
+
+        <!-- السمكة الذهبية -->
+        <div class="fish-card" onclick="toggleInfo('goldfish')">
+            <img src="gif/zena.jpg" alt="سمكة ذهبية">
+            <div class="info-box" id="goldfish">
+                تعيش في الأحواض المنزلية، لونها ذهبي لامع. سهلة التربية، مسالمة، ويمكن أن تعيش سنوات إذا تم الاعتناء بها.
+            </div>
+        </div>
+
+        <!-- سمكة الفايتر -->
+        <div class="fish-card" onclick="toggleInfo('fighter')">
+            <img src="gif/faiter.jpg" alt="سمكة الفايتر">
+            <div class="info-box" id="fighter">
+                تُعرف بالسمكة المقاتلة. ألوانها زاهية وزعانفها طويلة، لكنها عدوانية بين الذكور. لا تحتاج حوض كبير وتعيش في ماء ساكن.
+            </div>
+        </div>
+
+        <!-- سمكة القرش -->
+        <div class="fish-card" onclick="toggleInfo('shark')">
+            <img src="gif/kersh.jpg" alt="سمكة القرش">
+            <div class="info-box" id="shark">
+                تعيش في المحيطات، منها أنواع مفترسة مثل القرش الأبيض. لها حاسة شم قوية وتصطاد بذكاء. تحافظ على توازن البيئة البحرية.
+            </div>
+        </div>
+
+        <!-- الدلفين -->
+        <div class="fish-card" onclick="toggleInfo('dolphin')">
+            <img src="gif/dilphen.jpg" alt="الدلفين">
+            <div class="info-box" id="dolphin">
+                الدلفين من الثدييات، يتنفس من رئتيه ويعيش في مجموعات. ذكي ويتواصل بالأصوات، ويُستخدم في العلاج والعروض.
+            </div>
+        </div>
+
+    </div>
+
+    
+
+    <script>
+    function toggleInfo(id) {
+      const box = document.getElementById(id);
+      box.style.display = box.style.display === "block" ? "none" : "block";
+    }
+    </script>
+
+    <div class="nav-buttons">
+        
+        <a href="page3.html">➡️ التالي</a>
+        <a href="HtmlPage1.html"> الرجوع ⬅️</a>
+    </div>
+
+</body>
+</html>

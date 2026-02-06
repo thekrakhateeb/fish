@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e6f7ff;
+            text-align: center;
+            direction: rtl;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #0077be;
+            margin-bottom: 30px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .question {
+            margin-bottom: 25px;
+            text-align: right;
+            font-size: 18px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 8px 0;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+            .nav-buttons a {
+                text-decoration: none;
+                background-color: #0077be;
+                color: white;
+                padding: 12px 24px;
+                border-radius: 25px;
+                font-size: 16px;
+                transition: background-color 0.3s;
+            }
+
+                .nav-buttons a:hover {
+                    background-color: #005b9f;
+                }
+                    #result {
+            margin-top: 30px;
+            font-size: 22px;
+            color: #004a75;
+            font-weight: bold;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>اختبار معلومات عن الأسماك 🐠</h1>
+
+    <form id="quizForm">
+        <div class="question">
+            1. كم تعيش عادة السمكة الذهبية؟
+            <label><input type="radio" name="q1" value="wrong"> سنة واحدة</label>
+            <label><input type="radio" name="q1" value="correct"> أكثر من 10 سنوات</label>
+            <label><input type="radio" name="q1" value="wrong"> 3 سنوات</label>
+        </div>
+
+        <div class="question">
+            2. هل سمكة الفايتر تحب العيش مع أسماك أخرى؟
+            <label><input type="radio" name="q2" value="correct"> لا، تفضل العيش وحدها</label>
+            <label><input type="radio" name="q2" value="wrong"> نعم، تحب العيش في مجموعات</label>
+            <label><input type="radio" name="q2" value="wrong"> تفضل العيش مع الأسماك الذهبية فقط</label>
+        </div>
+
+        <div class="question">
+            3. أين تعيش عادة سمكة المهرج؟
+            <label><input type="radio" name="q3" value="wrong"> في الأنهار العذبة</label>
+            <label><input type="radio" name="q3" value="correct"> في المحيط وتعيش داخل شقائق النعمان</label>
+            <label><input type="radio" name="q3" value="wrong"> في الأحواض المنزلية فقط</label>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">تحقق من الإجابات</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            const total = 3;
+
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            const q3 = document.querySelector('input[name="q3"]:checked');
+
+            if (!q1 || !q2 || !q3) {
+                alert("يرجى الإجابة على جميع الأسئلة أولاً!");
+                return;
+            }
+
+            if (q1.value === "correct") score++;
+            if (q2.value === "correct") score++;
+            if (q3.value === "correct") score++;
+
+            const resultDiv = document.getElementById("result");
+            resultDiv.textContent = `لقد حصلت على ${score} من ${total} نقاط. `;
+
+            if (score === total) {
+                resultDiv.textContent += "🎉 ممتاز! أنت خبير في الأسماك!";
+            } else if (score >= 1) {
+                resultDiv.textContent += "👍 جيد، حاول التعلم أكثر!";
+            } else {
+                resultDiv.textContent += "😕 حاول مرة أخرى لتحسن معلوماتك.";
+            }
+        }
+    </script>
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div class="nav-buttons">
+        <a href="p6.html">➡️ التالي </a>
+        <a href="HtmlPage1.html">🏠 الرئيسية</a>
+        <a href="p4.html"> الرجوع الى الخلف⬅️ </a>
+
+    </div>
+</body>
+</html>
